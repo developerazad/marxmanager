@@ -76,5 +76,27 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $(document).on('click','#delete_bookmark',function () {
+            var bookmark_id = $(this).attr('data-id');
+            var url = '<?php echo url('delete_bookmark'); ?>'+'/'+bookmark_id;
+            //alert(url); exit();
+            var del = confirm('Are you sure want to delete ?');
+            if(del){
+               $.ajax({
+                   type:'POST',
+                   url:url,
+                   success: function (data) {
+                        location.reload();
+                   }
+               });
+            }
+        });
+    </script>
 </body>
 </html>

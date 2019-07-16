@@ -19,3 +19,4 @@ Auth::routes();
 
 Route::get('/home', 'BookmarksController@index')->name('home');
 Route::post('store', 'BookmarksController@store');
+Route::post('delete_bookmark/{bookmark_id}', 'BookmarksController@destroy');

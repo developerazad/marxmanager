@@ -26,7 +26,9 @@
     </div>
 </div>
 
-    <!-- Modal -->
-    @include('inc.add_modal')
-    <!-- /modal-->
+<!-- Modal -->
+@include('inc.add_modal')
+<!-- /modal-->
 @endsection
+
+
